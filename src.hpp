@@ -3,7 +3,7 @@
 template <typename T>
 class Validator {
 private:
-    T value;
+    const T value;
     bool result;
     bool negate_mode;
 
@@ -21,8 +21,8 @@ public:
 
     Validator& toBeOneOf(const std::vector<T>& vec) {
         bool found = false;
-        for (const T& elem : vec) {
-            if (value == elem) {
+        for (typename std::vector<T>::const_iterator it = vec.begin(); it != vec.end(); ++it) {
+            if (value == *it) {
                 found = true;
                 break;
             }
