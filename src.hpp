@@ -19,8 +19,8 @@ struct Validator {
 
     Validator& toBeOneOf(const std::vector<T>& vec) {
         bool found = false;
-        for (typename std::vector<T>::const_iterator it = vec.begin(); it != vec.end(); ++it) {
-            if (value == *it) {
+        for (typename std::vector<T>::size_type i = 0; i < vec.size(); ++i) {
+            if (value == vec[i]) {
                 found = true;
                 break;
             }
