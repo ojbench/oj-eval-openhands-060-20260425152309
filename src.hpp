@@ -1,13 +1,11 @@
 #include <vector>
 
 template <typename T>
-class Validator {
-private:
-    const T value;
+struct Validator {
+    T value;
     bool result;
     bool negate_mode;
 
-public:
     Validator(const T& val) : value(val), result(true), negate_mode(false) {}
 
     Validator& toBe(const T& other) {
