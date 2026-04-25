@@ -1,0 +1,5 @@
+test_local
+test_local.cpp
+*.o
+*.out
+*.exe
